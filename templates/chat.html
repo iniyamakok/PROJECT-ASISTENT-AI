@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SchoolAI Chat</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>
+<i class="fa-solid fa-graduation-cap"></i>
+SchoolAI
+</h2>
+
+
+<button class="new-chat">
+<i class="fa-solid fa-plus"></i>
+Chat Baru
+</button>
+
+
+<div class="menu">
+
+<a href="{{ url_for('home') }}">
+<i class="fa-solid fa-house"></i>
+Home
+</a>
+
+
+<a href="#">
+<i class="fa-solid fa-clock-rotate-left"></i>
+Riwayat
+</a>
+
+
+<a href="#">
+<i class="fa-solid fa-book"></i>
+Ringkas Materi
+</a>
+
+
+<a href="#">
+<i class="fa-solid fa-file-circle-question"></i>
+Quiz
+</a>
+
+
+<a href="#">
+<i class="fa-solid fa-gear"></i>
+Pengaturan
+</a>
+
+
+</div>
+
+
+
+<div class="subjects">
+
+<h3>Mata Pelajaran</h3>
+
+
+<button onclick="pilihMapel(this)">
+<i class="fa-solid fa-square-root-variable"></i>
+Matematika
+</button>
+
+
+<button onclick="pilihMapel(this)">
+<i class="fa-solid fa-atom"></i>
+Fisika
+</button>
+
+
+<button onclick="pilihMapel(this)">
+<i class="fa-solid fa-flask"></i>
+Kimia
+</button>
+
+
+<button onclick="pilihMapel(this)">
+<i class="fa-solid fa-dna"></i>
+Biologi
+</button>
+
+
+<button onclick="pilihMapel(this)">
+<i class="fa-solid fa-earth-asia"></i>
+Geografi
+</button>
+
+
+<button onclick="pilihMapel(this)">
+<i class="fa-solid fa-scroll"></i>
+Sejarah
+</button>
+
+
+<button onclick="pilihMapel(this)">
+<i class="fa-solid fa-language"></i>
+Bahasa Indonesia
+</button>
+
+
+<button onclick="pilihMapel(this)">
+<i class="fa-solid fa-language"></i>
+Bahasa Inggris
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- Chat -->
+
+<div class="chat">
+
+
+<div class="chat-header">
+
+<h2>
+SchoolAI Assistant
+</h2>
+
+<p>
+Belajar lebih mudah dengan AI.
+</p>
+
+</div>
+
+
+
+<!-- CHAT HISTORY AKAN MASUK DISINI -->
+
+<div class="chat-box" id="chatBox">
+
+</div>
+
+
+
+
+<div class="suggestion">
+
+<button onclick="kirimSaran(this)">
+Apa itu Fotosintesis?
+</button>
+
+
+<button onclick="kirimSaran(this)">
+Jelaskan Hukum Newton
+</button>
+
+
+<button onclick="kirimSaran(this)">
+Ringkas Sistem Pernapasan
+</button>
+
+
+<button onclick="kirimSaran(this)">
+Buat Quiz Matematika
+</button>
+
+
+</div>
+
+
+
+
+<div class="input-area">
+
+<input
+type="text"
+id="userInput"
+placeholder="Tanyakan materi apa saja...">
+
+
+<button id="sendBtn">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script>
+
+window.onload = async function(){
+
+    const chatBox = document.getElementById("chatBox");
+
+
+    try{
+
+        const response = await fetch("/history");
+
+        const history = await response.json();
+
+
+
+        if(history.length === 0){
+
+            chatBox.innerHTML = `
+
+            <div class="ai">
+
+                <div class="avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+
+                <div class="bubble">
+
+                Halo, saya SchoolAI, asisten belajar berbasis AI.
+                Silahkan bertanya tentang materi pelajaran.
+
+                </div>
+
+
+            </div>
+
+            `;
+
+
+            return;
+
+        }
+
+
+
+
+        history.forEach(chat => {
+
+
+            let div = document.createElement("div");
+
+
+
+            if(chat.role === "user"){
+
+
+                div.className = "user";
+
+
+                div.innerHTML = `
+
+                <div class="bubble">
+
+                ${chat.content}
+
+                </div>
+
+                `;
+
+
+
+            }else{
+
+
+                div.className = "ai";
+
+
+                div.innerHTML = `
+
+                <div class="avatar">
+
+                <i class="fa-solid fa-robot"></i>
+
+                </div>
+
+
+                <div class="bubble">
+
+                ${chat.content}
+
+                </div>
+
+                `;
+
+
+            }
+
+
+
+            chatBox.appendChild(div);
+
+
+        });
+
+
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+
+
+    }catch(error){
+
+
+        console.log(error);
+
+
+    }
+
+
+};
+
+
+</script>
+
+
+
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+
+
+</body>
+</html>

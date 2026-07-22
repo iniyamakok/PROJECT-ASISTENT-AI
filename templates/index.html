@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolAI | Belajar Lebih Mudah</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        SchoolAI
+    </div>
+
+    <nav>
+
+        <a href="#">Home</a>
+
+        <a href="#fitur">Fitur</a>
+
+        <a href="#mapel">Mata Pelajaran</a>
+
+        <a href="{{ url_for('chat') }}">Chat AI</a>
+
+        <a href="#about">About</a>
+
+    </nav>
+
+    <a href="{{ url_for('chat') }}" class="btn">
+        Mulai Belajar
+    </a>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+Belajar Lebih Mudah
+Bersama AI
+</h1>
+
+<p>
+
+SchoolAI membantu kamu memahami
+materi sekolah dengan penjelasan
+yang sederhana, cepat,
+dan mudah dipahami.
+
+</p>
+
+<div class="buttons">
+
+<a href="{{ url_for('chat') }}" class="btn">
+Mulai Chat
+</a>
+
+<a href="#fitur" class="btn2">
+Pelajari Fitur
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>AI Assistant</h3>
+
+<p>
+Tanyakan semua materi
+sekolah kapan saja.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="fitur">
+
+<h2>Fitur SchoolAI</h2>
+
+<div class="cards">
+
+<div class="feature">
+
+<i class="fa-solid fa-comments"></i>
+
+<h3>Chat AI</h3>
+
+<p>
+
+Tanyakan materi Matematika,
+Fisika, Kimia,
+Biologi dan lainnya.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-book"></i>
+
+<h3>Ringkas Materi</h3>
+
+<p>
+
+AI akan membuat ringkasan
+materi menjadi lebih mudah dipahami.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-file-pen"></i>
+
+<h3>Quiz Otomatis</h3>
+
+<p>
+
+Buat soal latihan otomatis
+berdasarkan materi.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-lightbulb"></i>
+
+<h3>Penjelasan Mudah</h3>
+
+<p>
+
+Bahasa sederhana
+agar lebih cepat dipahami.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="mapel">
+
+<h2>Mata Pelajaran</h2>
+
+<div class="subjects">
+
+<div class="subject">
+<i class="fa-solid fa-square-root-variable"></i>
+<span>Matematika</span>
+</div>
+
+<div class="subject">
+<i class="fa-solid fa-atom"></i>
+<span>Fisika</span>
+</div>
+
+<div class="subject">
+<i class="fa-solid fa-flask"></i>
+<span>Kimia</span>
+</div>
+
+<div class="subject">
+<i class="fa-solid fa-dna"></i>
+<span>Biologi</span>
+</div>
+
+<div class="subject">
+<i class="fa-solid fa-earth-asia"></i>
+<span>Geografi</span>
+</div>
+
+<div class="subject">
+<i class="fa-solid fa-scroll"></i>
+<span>Sejarah</span>
+</div>
+
+<div class="subject">
+<i class="fa-solid fa-language"></i>
+<span>Bahasa Indonesia</span>
+</div>
+
+<div class="subject">
+<i class="fa-solid fa-language"></i>
+<span>Bahasa Inggris</span>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+
+<h2>1000+</h2>
+
+<p>Pertanyaan Dijawab</p>
+
+</div>
+
+<div class="stat">
+
+<h2>8</h2>
+
+<p>Mata Pelajaran</p>
+
+</div>
+
+<div class="stat">
+
+<h2>24/7</h2>
+
+<p>AI Online</p>
+
+</div>
+
+<div class="stat">
+
+<h2>100%</h2>
+
+<p>Gratis Digunakan</p>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>Tentang SchoolAI</h2>
+
+<p>
+
+SchoolAI adalah website pembelajaran berbasis Artificial Intelligence
+yang membantu siswa memahami materi sekolah
+dengan cara yang lebih cepat,
+interaktif,
+dan menyenangkan.
+
+</p>
+
+<a href="{{ url_for('chat') }}" class="btn">
+
+Coba Sekarang
+
+</a>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 SchoolAI
+
+</p>
+
+</footer>
+
+</body>
+</html>
