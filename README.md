@@ -18,14 +18,6 @@ Fitur yang akan ditambahkan:
 - Text to Speech
 - Export hasil belajar
 
-## Fitur
-
-- Upload PDF materi
-- AI menjelaskan isi materi
-- Generate ringkasan otomatis
-- Generate soal latihan
-- Text to Speech (TTS)
-
 ## Cara Penggunaan
 
 ### 1. Upload Materi
