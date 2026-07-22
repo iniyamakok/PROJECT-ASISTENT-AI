@@ -2,6 +2,22 @@
 
 Website edukasi berbasis Artificial Intelligence yang membantu siswa memahami materi pelajaran.
 
+## Status Proyek
+
+🚧 Dalam Pengembangan (±30%)
+
+Fitur yang sudah tersedia:
+- Chat AI
+- Ringkasan materi
+- Pemilihan mata pelajaran
+- Riwayat percakapan
+
+Fitur yang akan ditambahkan:
+- Upload PDF
+- Quiz otomatis
+- Text to Speech
+- Export hasil belajar
+
 ## Fitur
 
 - Upload PDF materi
